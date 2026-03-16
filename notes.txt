@@ -1,0 +1,36 @@
+#1 Project DevMatch (A Dating App for Developers)
+
+Pre requistes:
+1. JavaScript
+2. TypeScript
+3. Node
+4. Express
++ Version 20 of node
+
+1. Scaffold App
+npx @nestjs/cli new devmatch --package-manager npm --skip-git -- directory .
+- temporarily installs nestjs command line
+- create new project "devmatch"
+- set package manager to npm
+- skips git setup
+- install everything in the current directory
+
+2. Install packages
+npm install
+
+3. Boot up project
+npm run start:dev
+
+Modules & Decorators
+1. Create Module using nestjs cli
+npx @nestjs/cli generate module profiles
+creates profile feature in src folder
+cli adds profile module under imports
+
+2. Create controller (contains all routes for profile feature)
+npx @nestjs/cli generate controller profiles
+
+
+Put VS Patch
+Put: updates entire resource
+Patch: updates parts of resource
