@@ -1,8 +1,8 @@
-import { IsString, Length} from "class-validator"
+import { IsString, MinLength} from "class-validator"
 
 export class UpdateProfileDto {
     @IsString()
-    @Length(3, 100)
+    @MinLength(3)
     name: string;
 
     @IsString()
