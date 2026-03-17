@@ -13,7 +13,7 @@ export class ProfilesService {
         },
         {
             id: randomUUID(),
-            name: "Name #2 blee blee blee",
+            name: "Name #2 (delete this to check if PUT api works)",
             description: "Description #2 (delete this to check if PUT api works)"
         },
         {
@@ -33,10 +33,10 @@ export class ProfilesService {
         );
         
         if (!matchingProfile) {
-            throw new NotFoundException();
+            throw new Error(`Profile with ${ id } not found.`);
         };
 
-        return this.profiles.find((profile) => profile.id === id)
+        return matchingProfile;
     }
 
     create(createProfileDto: CreateProfileDto) {
@@ -45,7 +45,7 @@ export class ProfilesService {
             ...createProfileDto
         };
         this.profiles.push(createdProfile);
-        return createProfileDto
+        return createProfileDto;
     }
 
     update(id: string, updateProfileDto : UpdateProfileDto) {
